@@ -258,6 +258,9 @@ vim.o.hlsearch = false
 vim.wo.number = true
 vim.wo.relativenumber = true
 
+-- :set virtualedit = 'all'
+vim.o.virtualedit = 'all'
+
 -- Enable mouse mode
 vim.o.mouse = 'a'
 
@@ -294,7 +297,6 @@ vim.o.termguicolors = true
 -- Keymaps for better default experience
 -- See `:help vim.keymap.set()`
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
-vim.keymap.set('n', '<leader>ex', vim.cmd.Ex, { desc = 'Exit file' })
 
 -- Keymaps for controlling NvimTree
 -- See `:help NvimTree`

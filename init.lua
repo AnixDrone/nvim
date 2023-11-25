@@ -294,8 +294,24 @@ vim.o.termguicolors = true
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 vim.keymap.set('n', '<leader>ex', vim.cmd.Ex, { desc = 'Exit file' })
 
+-- Keymaps for controlling NvimTree
+-- See `:help NvimTree`
 vim.keymap.set('n', '<leader>to', vim.cmd.NvimTreeOpen, { desc = "Open file tree" })
 vim.keymap.set('n', '<leader>tc', vim.cmd.NvimTreeClose, { desc = "Close file tree" })
+
+
+-- Keymaps for Github copilot
+-- See `:help copilot`
+vim.g.copilot_no_tab_map = true
+vim.g.copilot_assume_mapped = true
+vim.keymap.set(
+  "i",
+  "<C-b>",
+  'copilot#Accept("<Return>")',
+  { noremap = true, silent = true, expr = true, replace_keycodes = false }
+)
+
+
 -- Remap for dealing with word wrap
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })

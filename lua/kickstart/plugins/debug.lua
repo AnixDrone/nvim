@@ -18,6 +18,7 @@ return {
     'williamboman/mason.nvim',
     'jay-babu/mason-nvim-dap.nvim',
 
+
     -- Add your own debuggers here
     'leoluz/nvim-dap-go',
     'mfussenegger/nvim-dap-python',
@@ -42,7 +43,7 @@ return {
         'delve',
       },
     }
-
+    require('dap.ext.vscode').load_launchjs(nil, {})
     -- Basic debugging keymaps, feel free to change to your liking!
     vim.keymap.set('n', '<F5>', dap.continue, { desc = 'Debug: Start/Continue' })
     vim.keymap.set('n', '<F1>', dap.step_into, { desc = 'Debug: Step Into' })
@@ -52,6 +53,7 @@ return {
     vim.keymap.set('n', '<leader>B', function()
       dap.set_breakpoint(vim.fn.input 'Breakpoint condition: ')
     end, { desc = 'Debug: Set Breakpoint' })
+    vim.keymap.set('n', '<F4>', dapui.open({ reset = true }), { desc = 'Debug: Open DAP UI' })
 
     -- Dap UI setup
     -- For more information, see |:help nvim-dap-ui|

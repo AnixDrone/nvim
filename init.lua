@@ -306,6 +306,7 @@ vim.keymap.set('n', '<leader>tc', vim.cmd.NvimTreeClose, { desc = "Close file tr
 -- Keymaps for Git
 vim.keymap.set('n', '<leader>gp', ':G push', { desc = "[P]ush commited changes" })
 vim.keymap.set('n', '<leader>gl', ':G pull', { desc = "Pu[l]l commited changes" })
+vim.keymap.set('n', '<leader>gb', ':G blame', { desc = "Git [B]lame for file" })
 --vim.keymap.set('n', '<leader>gs', vim.cmd.Gstatus, { desc = "Open git status" })
 
 -- Keymaps for Github copilot

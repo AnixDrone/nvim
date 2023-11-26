@@ -300,8 +300,9 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
 -- Keymaps for controlling NvimTree
 -- See `:help NvimTree`
-vim.keymap.set('n', '<leader>to', vim.cmd.NvimTreeOpen, { desc = "Open file tree" })
-vim.keymap.set('n', '<leader>tc', vim.cmd.NvimTreeClose, { desc = "Close file tree" })
+vim.keymap.set('n', '<leader>to', vim.cmd.NvimTreeOpen, { desc = "[O]pen file [t]ree" })
+vim.keymap.set('n', '<leader>tc', vim.cmd.NvimTreeClose, { desc = "[C]lose file [t]ree" })
+vim.keymap.set('n', '<leader>tt', vim.cmd.NvimTreeToggle, { desc = "[T]oggle file [t]ree" })
 
 -- Keymaps for Git
 vim.keymap.set('n', '<leader>gp', ':G push', { desc = "[P]ush commited changes" })

@@ -53,7 +53,7 @@ return {
     vim.keymap.set('n', '<leader>B', function()
       dap.set_breakpoint(vim.fn.input 'Breakpoint condition: ')
     end, { desc = 'Debug: Set Breakpoint' })
-    vim.keymap.set('n', '<F4>', dapui.open({ reset = true }), { desc = 'Debug: Open DAP UI' })
+    vim.keymap.set('n', '<F4>', dapui.open({ reset = true }), { desc = 'Debug: Reset UI' })
 
     -- Dap UI setup
     -- For more information, see |:help nvim-dap-ui|

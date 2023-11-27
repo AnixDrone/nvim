@@ -305,9 +305,9 @@ vim.keymap.set('n', '<leader>tc', vim.cmd.NvimTreeClose, { desc = "[C]lose file 
 vim.keymap.set('n', '<leader>tt', vim.cmd.NvimTreeToggle, { desc = "[T]oggle file [t]ree" })
 
 -- Keymaps for Git
-vim.keymap.set('n', '<leader>gp', ':G push', { desc = "[P]ush commited changes" })
-vim.keymap.set('n', '<leader>gl', ':G pull', { desc = "Pu[l]l commited changes" })
-vim.keymap.set('n', '<leader>gb', ':G blame', { desc = "Git [B]lame for file" })
+vim.keymap.set('n', '<leader>gp', ':G push<cr>', { desc = "[P]ush commited changes" })
+vim.keymap.set('n', '<leader>gl', ':G pull<cr>', { desc = "Pu[l]l commited changes" })
+vim.keymap.set('n', '<leader>gb', ':G blame<cr>', { desc = "Git [B]lame for file" })
 --vim.keymap.set('n', '<leader>gs', vim.cmd.Gstatus, { desc = "Open git status" })
 
 -- Keymaps for Github copilot
@@ -408,6 +408,7 @@ end, { desc = '[/] Fuzzily search in current buffer' })
 
 vim.keymap.set('n', '<leader>gf', require('telescope.builtin').git_files, { desc = 'Search [G]it [F]iles' })
 vim.keymap.set('n', '<leader>sf', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
+vim.keymap.set('n', '<leader>ss', ':Telescope find_files hidden=true<cr>', { desc = '[S]earch [F]iles' })
 vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = '[S]earch [H]elp' })
 vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
 vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })

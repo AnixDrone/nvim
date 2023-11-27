@@ -238,6 +238,8 @@ require('lazy').setup({
   require 'kickstart.plugins.debug',
   require 'custom.plugins.treesitter-context',
   require 'custom.plugins.copilot',
+  require 'custom.plugins.vim-tmux-navigator',
+  require 'custom.plugins.vimux',
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    You can use this folder to prevent any conflicts with this init.lua if you're interested in keeping
   --    up-to-date with whatever is in the kickstart repo.
@@ -309,6 +311,10 @@ vim.keymap.set('n', '<leader>gp', ':G push<cr>', { desc = "[P]ush commited chang
 vim.keymap.set('n', '<leader>gl', ':G pull<cr>', { desc = "Pu[l]l commited changes" })
 vim.keymap.set('n', '<leader>gb', ':G blame<cr>', { desc = "Git [B]lame for file" })
 --vim.keymap.set('n', '<leader>gs', vim.cmd.Gstatus, { desc = "Open git status" })
+
+-- Keymaps for Tmux
+vim.keymap.set('n', '<leader>co', ':VimuxOpenRunner<cr>', { desc = "[O]pen [C]onsole" })
+vim.keymap.set('n', '<leader>ct', ':VimuxCloseRunner<cr>', { desc = "[T]erminate [C]onsole" })
 
 -- Keymaps for Github copilot
 -- See `:help copilot`
@@ -503,14 +509,14 @@ local on_attach = function(_, bufnr)
   end
 
   nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
-  nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
+  nmap('<leader>la', vim.lsp.buf.code_action, '[C]ode [A]ction')
 
   nmap('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
   nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
   nmap('gI', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
-  nmap('<leader>D', require('telescope.builtin').lsp_type_definitions, 'Type [D]efinition')
-  nmap('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
-  nmap('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
+  nmap('<leader>lD', require('telescope.builtin').lsp_type_definitions, 'Type [D]efinition')
+  nmap('<leader>lds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
+  nmap('<leader>lws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
 
   -- See `:help K` for why this keymap
   nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
@@ -532,7 +538,11 @@ end
 
 -- document existing key chains
 require('which-key').register {
-  ['<leader>c'] = { name = '[C]ode', _ = 'which_key_ignore' },
+  ['<leader>c'] = { name = '[C]onsole Action', _ = 'which_key_ignore' },
+  ['<leader>l'] = { name = '[L]sp Action', _ = 'which_key_ignore' },
+  ['<leader>ls'] = { name = '[L]sp [S]ymbol', _ = 'which_key_ignore' },
+  ['<leader>lw'] = { name = '[L]sp [W]orkspace', _ = 'which_key_ignore' },
+  ['<leader>ld'] = { name = '[L]sp [D]ocument', _ = 'which_key_ignore' },
   ['<leader>d'] = { name = '[D]ocument', _ = 'which_key_ignore' },
   ['<leader>g'] = { name = '[G]it', _ = 'which_key_ignore' },
   ['<leader>h'] = { name = 'More git', _ = 'which_key_ignore' },

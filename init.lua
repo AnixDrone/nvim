@@ -569,7 +569,22 @@ local servers = {
   -- clangd = {},
   -- gopls = {},
   -- pyright = {},
-  -- rust_analyzer = {},
+  rust_analyzer = {
+    imports = {
+      granularity = {
+        group = "module",
+      },
+      prefix = "self",
+    },
+    cargo = {
+      buildScripts = {
+        enable = true,
+      },
+    },
+    procMacro = {
+      enable = true
+    },
+  },
   -- tsserver = {},
   -- html = { filetypes = { 'html', 'twig', 'hbs'} },
 
@@ -605,6 +620,7 @@ mason_lspconfig.setup_handlers {
     }
   end,
 }
+
 
 -- [[ Configure nvim-cmp ]]
 -- See `:help cmp`

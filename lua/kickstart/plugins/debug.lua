@@ -18,8 +18,8 @@ return {
     'williamboman/mason.nvim',
     'jay-babu/mason-nvim-dap.nvim',
 
-
     -- Add your own debuggers here
+    "nvim-neotest/nvim-nio",
     'leoluz/nvim-dap-go',
     'mfussenegger/nvim-dap-python',
   },

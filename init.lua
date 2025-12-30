@@ -538,19 +538,32 @@ end
 
 -- document existing key chains
 require('which-key').register {
-  ['<leader>c'] = { name = '[C]onsole Action', _ = 'which_key_ignore' },
-  ['<leader>l'] = { name = '[L]sp Action', _ = 'which_key_ignore' },
-  ['<leader>ls'] = { name = '[L]sp [S]ymbol', _ = 'which_key_ignore' },
-  ['<leader>lw'] = { name = '[L]sp [W]orkspace', _ = 'which_key_ignore' },
-  ['<leader>ld'] = { name = '[L]sp [D]ocument', _ = 'which_key_ignore' },
-  ['<leader>d'] = { name = '[D]ocument', _ = 'which_key_ignore' },
-  ['<leader>g'] = { name = '[G]it', _ = 'which_key_ignore' },
-  ['<leader>h'] = { name = 'More git', _ = 'which_key_ignore' },
-  ['<leader>r'] = { name = '[R]ename', _ = 'which_key_ignore' },
-  ['<leader>s'] = { name = '[S]earch', _ = 'which_key_ignore' },
-  ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
-  ['<leader>t'] = { name = 'File [T]ree', _ = 'which_key_ignore' },
+  { "<leader>c",   group = "[C]onsole Action" },
+  { "<leader>c_",  hidden = true },
+  { "<leader>d",   group = "[D]ocument" },
+  { "<leader>d_",  hidden = true },
+  { "<leader>g",   group = "[G]it" },
+  { "<leader>g_",  hidden = true },
+  { "<leader>h",   group = "More git" },
+  { "<leader>h_",  hidden = true },
+  { "<leader>l",   group = "[L]sp Action" },
+  { "<leader>l_",  hidden = true },
+  { "<leader>ld",  group = "[L]sp [D]ocument" },
+  { "<leader>ld_", hidden = true },
+  { "<leader>ls",  group = "[L]sp [S]ymbol" },
+  { "<leader>ls_", hidden = true },
+  { "<leader>lw",  group = "[L]sp [W]orkspace" },
+  { "<leader>lw_", hidden = true },
+  { "<leader>r",   group = "[R]ename" },
+  { "<leader>r_",  hidden = true },
+  { "<leader>s",   group = "[S]earch" },
+  { "<leader>s_",  hidden = true },
+  { "<leader>t",   group = "File [T]ree" },
+  { "<leader>t_",  hidden = true },
+  { "<leader>w",   group = "[W]orkspace" },
+  { "<leader>w_",  hidden = true },
 }
+
 
 -- mason-lspconfig requires that these setup functions are called in this order
 -- before setting up the servers.
